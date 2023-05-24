@@ -1,3 +1,10 @@
+// packages
+const inquirer = require('inquirer');
+const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt');
+const fs = require('fs');
+const generateLogo = require('./lib/generateLogo');
+
+
 // questions
 const questions = [
     {
