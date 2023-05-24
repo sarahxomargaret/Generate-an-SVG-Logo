@@ -43,3 +43,18 @@ const questions = [
         name: 'backgroundcolor',
     },
 ]
+
+//function to start app
+function init() {
+    inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt);
+    inquirer.prompt(questions)
+    .then((criteria) => {
+        console.log(criteria);
+        fs.writeFile('logo.svg', generateLogo(criteria), (err) =>
+            err ? console.log(err) : console.log('Generate logo.svg.')
+            );
+    })
+}
+
+//function call
+init();
